@@ -19,7 +19,7 @@ namespace Flux.Presentation.Controllers.Domain
             _userService = userService;
         }
 
-        // GET api/values
+        // GET api/user
         [HttpGet]
         public async Task<IEnumerable<User>> Get()
         {
