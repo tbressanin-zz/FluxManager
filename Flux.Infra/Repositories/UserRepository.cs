@@ -1,10 +1,9 @@
-﻿using Flux.Domain.Domain;
+﻿using Flux.Domain.Core;
+using Flux.Domain.Interfaces;
 using Flux.Infra.DbContext;
 using MongoDB.Bson;
 using MongoDB.Driver;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Flux.Infra.Repositories

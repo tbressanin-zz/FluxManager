@@ -2,8 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
+using Flux.CrossCutting;
+using Flux.Domain.Core;
+using Flux.Domain.Interfaces;
 using Flux.Infra.DbContext;
 using Flux.Infra.Repositories;
+using Flux.Model.Core;
 using Flux.Service.Interfaces;
 using Flux.Service.Services;
 using Microsoft.AspNetCore.Builder;

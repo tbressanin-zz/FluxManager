@@ -1,4 +1,4 @@
-﻿using Flux.Domain.Domain;
+﻿using Flux.Domain.Core;
 using Flux.Domain.Interfaces;
 using Flux.Infra.Repositories;
 using Flux.Service.Interfaces;
