@@ -10,10 +10,10 @@ namespace Flux.Infra.Repositories
     {
         public IMongoCollection<TEntity> Collection;
 
-        public BaseRepository(IMongoDbContext context)
+        public BaseRepository(IMongoDbContext context, string dbName)
         {
             //BaseMap();
-            Collection = context.GetDatabase().GetCollection<TEntity>(typeof(TEntity).Name);
+            Collection = context.GetDatabase(dbName).GetCollection<TEntity>(typeof(TEntity).Name);
         }
 
         //public void BaseMap()

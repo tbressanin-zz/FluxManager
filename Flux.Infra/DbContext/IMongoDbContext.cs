@@ -7,6 +7,7 @@ namespace Flux.Infra.DbContext
 {
     public interface IMongoDbContext
     {
-        IMongoDatabase GetDatabase();
+        IMongoDatabase GetDatabase(string dbName);
+        void StartClient();
     }
 }

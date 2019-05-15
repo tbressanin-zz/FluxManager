@@ -15,8 +15,10 @@ namespace Flux.Infra.Repositories
 
         static readonly FilterDefinition<User> EmptyFilter = FilterDefinition<User>.Empty;
 
+        static readonly string dbName = "PhantomManager";
+
         public UserRepository(IMongoDbContext context)
-           : base(context)
+           : base(context, dbName)
         {
         }
 

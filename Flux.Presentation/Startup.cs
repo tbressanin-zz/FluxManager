@@ -28,6 +28,7 @@ namespace Flux.Presentation
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddSingleton(_ => Configuration);
             services.Configure<MongoDbContext>(Configuration);
 
             //services.AddSingleton(new Crypto(Environment.GetEnvironmentVariable("CryptoKey")));

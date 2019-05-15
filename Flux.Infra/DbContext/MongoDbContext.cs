@@ -8,20 +8,26 @@ namespace Flux.Infra.DbContext
 {
     public class MongoDbContext : IMongoDbContext
     {
+        private readonly IConfiguration Configuration;
+
         protected IMongoClient Client { get; set; }
 
         public IMongoDatabase Database { get; set; }
 
-
         public MongoDbContext(IConfiguration configuration)
         {
-            Client = new MongoClient(configuration["MongoDb:ConnectionString"]);
-            Database = Client.GetDatabase("PhantomManager");
+            Configuration = configuration;
+            StartClient();
         }
 
-        public IMongoDatabase GetDatabase()
+        public void StartClient()
         {
-            return Database;
+            Client = new MongoClient(Configuration["MongoDb:ConnectionString"]);
+        }
+
+        public IMongoDatabase GetDatabase(string dbName)
+        {
+            return Client.GetDatabase(dbName);
         }
     }
 }
